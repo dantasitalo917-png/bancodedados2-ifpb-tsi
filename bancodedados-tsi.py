@@ -24,3 +24,27 @@ if r.exists('chave'):
     print(r.get('chave'))
     r.delete('chave')
     print(r.exists('chaves'))
+
+class Usuario:
+    def __init__(self, user_id, email, nome, senha):	
+        self.user_id = user_id
+        self.email = email
+        self.nome = nome
+        self.senha = senha
+
+usuario = Usuario(1, "italo@gmail", "italo dantas", "12345")
+print(usuario.nome, usuario.email, usuario.user_id, usuario.senha)
+
+
+{
+	'redis_version': '7.2.4',
+	'uptime_in_seconds': 123456,
+	'connected_clients': 10,
+	'used_memory_human': '2.34M',
+	'total_commands_processed': 150000,
+	'role': 'master',
+	'rdb_last_save_time': 1717000000,
+	'aof_enabled': 1,
+	'db0': {'keys': 25,'expires': 5, 'avg_ttl': 120000}
+}
+
