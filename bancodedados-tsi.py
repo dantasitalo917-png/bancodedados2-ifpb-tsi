@@ -11,10 +11,16 @@ r = redis.Redis(
     password="nWfktsehkGEAzK0jCOU1ubaH1tUbUzlB",
 )
 
-success = r.set('foo', 'bar')
-# True
-
-result = r.get('foo')
-print(result)
-# >>> bar
-
+r.set('chave', 10)
+print(r.get('chave'))
+if r.exists('chave'):
+    r.incr('chave')
+    print(r.get('chave'))
+    r.incrby('chave', 5)
+    print(r.get('chave'))
+    r.decr('chave')
+    print(r.get('chave'))
+    r.decrby('chave', 3)
+    print(r.get('chave'))
+    r.delete('chave')
+    print(r.exists('chaves'))
